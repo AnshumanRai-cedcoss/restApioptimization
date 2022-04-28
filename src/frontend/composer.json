@@ -1,0 +1,6 @@
+{
+    "require": {
+        "fabfuel/prophiler": "^1.6",
+        "mongodb/mongodb": "^1.12"
+    }
+}

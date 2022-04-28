@@ -1,0 +1,38 @@
+<link href="../../../../application/public/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<!-- Custom styles for this template -->
+<link href="../../../../application/public/assets/css/signin.css" rel="stylesheet">
+
+<main class="form-signup text-center d-flex justify-content-center">
+    <form action="" method="post">
+        <h1 class="h3 mb-3 fw-normal">New User</h1>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingUname" name="uName" placeholder="User Name" required>
+            <label for="floatingPassword">User Name</label>
+        </div>
+        <div class="form-floating">
+            <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="name@example.com" required>
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control m-0" id="floatingPassword" name="password" placeholder="Password" required>
+            <label for="floatingPassword">Password</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" name="addUser" type="submit">Register User</button>
+        <p class="m-5 text-primary"> Already registered <a href="<?php BASE_URI ?>login">Sign In</a> </p>
+        <p class="mt-5 mb-3 text-muted">&copy; CEDCOSS Technologies</p>
+
+    </form>
+</main>
+
+
+<?php
+if (isset($token)) { ?>
+    <div class="d-flex justify-content-center px-5 alert alert-<?php echo $token == "Email Must Be Unique!!" ? 'danger' : 'success'; ?>">
+        <?php echo "<br>Token:<pre>" . $token . "</pre>"; ?>
+    </div>
+<?php }
+if (isset($message)) { ?>
+    <div class="d-flex justify-content-center text-danger">
+        <?php echo $message; ?>
+    </div>
+<?php } ?>

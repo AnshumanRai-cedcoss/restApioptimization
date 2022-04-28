@@ -1,0 +1,60 @@
+<?php include('header.phtml'); ?>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+ <input class="form-control form-control-dark w-100 my-2" type="text" placeholder="Search by Order Id or Customer Name" aria-label="Search">
+
+    <h2>Orders</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Order Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Product Id</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Status</th>
+                    <th scope="col"> Change Status</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php
+                foreach ($orders as $k => $v) {
+                ?>
+                    <tr>
+                        <td> <?php echo $v["_id"] ?></td>
+                        <td> <?php echo $v['name']  ?></td>
+                        <td> <?php echo $v['email']  ?></td>
+                        <td> <?php echo $v['product_id']  ?></td>
+                        <td> <?php echo $v['quantity']  ?></td>
+                        <td> <?php echo $v['date']  ?></td>
+                        <td> <?php echo $v['status']  ?></td>
+
+                        <td>
+                            <form action='<?php echo BASE_URI ?>admin/statusChange' method="post">
+                                <p class="row"> <select name="status" class="col-md-6 statusSelected ">
+                                        <option value="">Status</option>
+                                        <option>Paid</option>
+                                        <option>Processing</option>
+                                        <option>Dispatched</option>
+                                        <option>Shipped</option>
+                                        <option>Refunded</option>
+                                    </select>
+                                    <input type="hidden" name="id" value=<?php echo $v['_id'] ?>>
+                                    <button type="submit" name="chStatus" class="col-md-5 btn-danger">Change</button>
+                                </p>
+                            </form>
+                        </td>
+                    <?php  }
+                    ?>
+            </tbody>
+        </table>
+    </div>
+
+
+</main>
+</div>
+</div>
+</body>

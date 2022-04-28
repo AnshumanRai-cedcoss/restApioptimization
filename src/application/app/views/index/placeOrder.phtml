@@ -1,0 +1,40 @@
+<link href="../../../../application/public/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<!-- Custom styles for this template -->
+<link href="../../../../application/public/assets/css/signin.css" rel="stylesheet">
+
+<main class="form-signup text-center d-flex justify-content-center">
+    <form action="" method="post">
+        <h1 class="h3 mb-3 fw-normal">Place an Order Here</h1>
+        <div class="form-floating">
+            <input type="email" class="form-control" id="floatingUname" name="email" required>
+            <label for="floatingPassword">Email</label>
+        </div>
+        <div class="form-floating py-2">
+            <select name="product" class="w-100 py-2 productSelected text-center">
+                <option>------------------------- <?php echo 'Select Product' ?> ---------------------------</option>
+                <?php foreach ($data as $key => $value) {
+                ?> <option value="<?php echo $value['_id'] ?>"><?php echo $value["name"] ?></option><?php
+                                                                                                } ?>
+            </select>
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingEmail" name="quantity" required>
+            <label for="floatingInput">Quantity</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" name="placeOrder" type="submit">Place Order</button>
+        <p class="mt-5 mb-3 text-muted">&copy; CEDCOSS Technologies</p>
+    </form>
+</main>
+
+<p class="text-danger text-center">
+    <?php
+    if (isset($message))
+        echo $message ?>
+</p>
+<p class="text-success text-center">
+    <?php
+    if (isset($success)) {
+        echo $success['status'] . "<br>";
+        echo $success['data'];
+    } ?>
+</p>

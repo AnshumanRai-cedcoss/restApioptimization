@@ -1,0 +1,10 @@
+{
+    "require-dev": {
+        "phpstan/phpstan": "^1.6"
+    },
+    "require": {
+        "mongodb/mongodb": "^1.12",
+        "guzzlehttp/guzzle": "^7.0",
+        "firebase/php-jwt": "^6.1"
+    }
+}

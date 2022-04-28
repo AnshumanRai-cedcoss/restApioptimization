@@ -1,0 +1,29 @@
+<link href="../../../../application/public/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+<div class="container-fluid p-5- m-5">
+    <h1 class="text-success">Welcome to my Page</h1>
+    <?php echo $this->tag->linkTo(
+        [
+            "login",
+            "Login as a developer",
+            "class" => "btn btn-primary"
+        ]
+    ); ?>
+    <br> <br>
+    <?php echo $this->tag->linkTo(
+        [
+            "frontend/index",
+            "View all products",
+            "class" => "btn btn-success"
+        ]
+    ); ?>
+    <br> <br>
+    <?php echo $this->tag->linkTo(
+        [
+            "index/placeOrder",
+            "Place an order",
+            "class" => "btn btn-warning"
+        ]
+    ); ?>
+
+</div>

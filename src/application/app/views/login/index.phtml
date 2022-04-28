@@ -1,0 +1,28 @@
+<link href="../../../../application/public/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<!-- Custom styles for this template -->
+<link href="../../../../application/public/assets/css/signin.css" rel="stylesheet">
+</head>
+
+<main class="form-signup text-center d-flex justify-content-center">
+    <form action="" method="post">
+        <h1 class="h3 mb-3 fw-normal">Login</h1>
+        <div class="form-floating">
+            <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="name@example.com" required>
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control m-0" id="floatingPassword" name="password" placeholder="Password" required>
+            <label for="floatingPassword">Password</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" name="loginAdmin" type="submit">Login</button>
+        <p>Not Registered ! <a href="<?php BASE_URI ?>user">Sign Up</a></p>
+        <p class="mt-5 mb-3 text-muted">&copy; CEDCOSS Technologies</p>
+
+    </form>
+</main>
+
+<p class="text-danger text-center">
+    <?php
+    if (isset($message))
+        echo $message ?>
+</p>
